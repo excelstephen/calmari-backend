@@ -1,1 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+media/
+staticfiles/
+
+# If using PostgreSQL, ignore database dumps
+*.dump
+
+# Environment variables
 .env
+
+# Environments
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Pytest
+.cache/
+
+# VS Code
+.vscode/
+
+# mypy
+.mypy_cache/
+
+# PyCharm
+.idea/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+*.cover
+.hypothesis/
+
+# Node
+node_modules/
+
+# Mac
+.DS_Store
