@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)_yg5fp#eom1^r%_#+xxg3lby!jb0qmv$qnkfrq62s&2%^@+ys
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['calmari-backend-ec5d7ed7bf56.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
