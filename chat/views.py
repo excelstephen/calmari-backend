@@ -1,0 +1,32 @@
+import openai
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from decouple import config
+
+openai.api_key = config("OPENAI_API_KEY")
+
+class ChatAPIView(APIView):
+    def post(self, request):
+        user_message = request.data.get("message")
+
+        if not user_message:
+            return Response({"error": "Message is required."}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            response = openai.ChatCompletion.create(
+                model="gpt-3.5-turbo",
+                messages=[
+                    {"role": "system", "content": "You are a kind and supportive therapy assistant named Calmari. Help the user with their mental health needs."},
+                    {"role": "user", "content": user_message},
+                ]
+            )
+
+            ai_message = response['choices'][0]['message']['content']
+            return Response({"reply": ai_message}, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+from django.shortcuts import render
+
+# Create your views here.
