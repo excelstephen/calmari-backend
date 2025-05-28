@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['calmari-backend-ec5d7ed7bf56.herokuapp.com', 'localhost', '127
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
-    "https://calmari-frontend.vercel.app/"
+    "https://calmari-frontend.vercel.app"
 ]
 
 
